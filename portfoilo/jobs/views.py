@@ -1,7 +1,6 @@
 from django.shortcuts import render
+from .models import Job
 
 def index(request):
-    return render(request, 'index.html')
-
-def list(request):
-    return render(request, 'jobs/list.html')
+    jobs = Job.objects
+    return render(request, 'jobs/index.html', {'jobs': jobs})
