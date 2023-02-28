@@ -75,13 +75,19 @@ WSGI_APPLICATION = 'portfoilo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+DB_USER = config("DB_USER")
+DB_PASSWORD = config("DB_PASSWORD")
+DB_HOST = config("DB_HOST")
+DB_PORT = config("DB_PORT")
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliodb',
-        'USER': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': '5432'
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT
     }
 }
 
