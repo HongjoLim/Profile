@@ -1,2 +1,4 @@
 django
 python-decouple
+pillow
+psycopg2-binary
